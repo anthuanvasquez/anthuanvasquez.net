@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#__nuxt {
+  @apply h-full;
+}
+
+html,
+body {
+  @apply bg-black text-white;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-primary via-secondary to-tertiary inline-block text-transparent bg-clip-text;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-r from-primary via-secondary to-tertiary;
+}
