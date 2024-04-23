@@ -68,4 +68,9 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     vueI18n: './i18n.config.ts',
   },
+  runtimeConfig: {
+    public: {
+      BASE_URL: process.env.BASE_URL,
+    },
+  },
 });
