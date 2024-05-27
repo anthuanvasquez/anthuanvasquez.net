@@ -2,8 +2,7 @@
   {
     "title": "Front-End",
     "description": "creating visual appearance of the web sites thinking in the users.",
-    "icon": "CodeBracketIcon",
-    "current": true
+    "icon": "CodeBracketIcon"
   },
   {
     "title": "Web Apps",

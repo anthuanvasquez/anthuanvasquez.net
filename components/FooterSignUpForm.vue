@@ -11,10 +11,7 @@
         target="_blank"
         novalidate
       >
-        <div
-          id="mc_embed_signup_scroll"
-          class="field has-addons"
-        >
+        <div id="mc_embed_signup_scroll" class="field has-addons">
           <p class="control has-icons-left is-expanded">
             <input
               id="mce-EMAIL"
@@ -24,22 +21,19 @@
               class="email input is-large"
               placeholder="Your email"
               required
-            >
+            />
             <span class="icon is-medium is-left">
               <i class="fas fa-envelope fa-lg" />
             </span>
           </p>
           <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-          <div
-            style="position: absolute; left: -5000px;"
-            aria-hidden="true"
-          >
+          <div style="position: absolute; left: -5000px" aria-hidden="true">
             <input
               type="text"
               name="b_38d46b8b20eaf85cc4ac4e309_5048e76ced"
               tabindex="-1"
               value=""
-            >
+            />
           </div>
           <p class="control">
             <input
@@ -48,7 +42,7 @@
               value="Subscribe"
               name="subscribe"
               class="button is-large"
-            >
+            />
           </p>
         </div>
       </form>
@@ -56,13 +50,3 @@
     <!--End mc_embed_signup-->
   </div>
 </template>
-
-<script>
-  export default {
-
-  }
-</script>
-
-<style lang="scss" scoped>
-
-</style>

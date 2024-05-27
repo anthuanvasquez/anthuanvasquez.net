@@ -1,19 +1,19 @@
 <script setup lang="ts">
-const projects = [
-  {
-    name: 'Oido Perfecto Studio',
-    description: 'A beat store for selling music licenses.',
-  },
-  {
-    name: 'und3fined.dev',
-    description: 'A dev company for building web apps.',
-  },
-];
+export declare type IProjects = {
+  name: string;
+  description: string;
+};
+
+const { supabase } = useSupabase();
+const { data, error } = await supabase.from('projects').select();
+const projects = ref([] as IProjects[]);
+
+projects.value = data as IProjects[];
 </script>
 
 <template>
   <div class="container mx-auto">
-    <div class="grid grid-cols-12 gap-8">
+    <div v-if="!error" class="grid grid-cols-12 gap-8">
       <div v-for="(project, index) in projects" :key="index" class="col-span-6">
         <div
           class="border border-slate-800 p-4 h-full rounded-lg relative text-center"

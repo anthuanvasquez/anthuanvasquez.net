@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useGetFetch } from '@/composables/useGetFetch';
-
 export declare type ISkillItem = {
   title: string;
   level: number;
@@ -17,9 +15,13 @@ export declare type ISkillGroup = {
   [key: string]: ISkillItemGroup;
 };
 
-const { data, pending } = await useGetFetch('/data/skills.json');
-const skills = data.value as ISkillItem[];
-const groupSkillsByCategory = skills.reduce(
+const { supabase } = useSupabase();
+const { data, error } = await supabase.from('skills').select();
+const skills = ref([] as ISkillItem[]);
+const groupSkillsByCategory = ref({} as ISkillGroup);
+
+skills.value = data as ISkillItem[];
+groupSkillsByCategory.value = skills.value.reduce(
   (acc: ISkillGroup, skill: ISkillItem) => {
     if (!acc[skill.category]) {
       acc[skill.category] = {
@@ -37,7 +39,7 @@ const groupSkillsByCategory = skills.reduce(
     return acc;
   },
   {}
-);
+) as ISkillGroup;
 </script>
 
 <template>
@@ -98,7 +100,7 @@ const groupSkillsByCategory = skills.reduce(
       </ul>
     </div>
 
-    <div v-if="!pending" class="grid grid-cols-6 md:grid-cols-12 gap-8">
+    <div v-if="!error" class="grid grid-cols-6 md:grid-cols-12 gap-8">
       <div
         v-for="(skillGroup, group) in groupSkillsByCategory"
         :key="group"

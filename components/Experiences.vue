@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useGetFetch } from '@/composables/useGetFetch';
 import type { IconName } from '@/types';
 
 export declare type IExperience = {
@@ -11,13 +10,16 @@ export declare type IExperience = {
   country?: IconName;
 };
 
-const { data, pending } = await useGetFetch('/data/experiences.json');
-const experiences = data.value as IExperience[];
+const { supabase } = useSupabase();
+const { data, error } = await supabase.from('experiences').select();
+const experiences = ref([] as IExperience[]);
+
+experiences.value = data as IExperience[];
 </script>
 
 <template>
   <div class="container mx-auto">
-    <div v-if="!pending" class="grid grid-cols-12 gap-8">
+    <div v-if="!error" class="grid grid-cols-12 gap-8">
       <div
         v-for="(experience, index) in experiences"
         :key="index"
