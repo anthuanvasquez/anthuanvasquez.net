@@ -10,9 +10,15 @@ export declare type IServiceItem = {
 
 const servicesList = ref([] as IServiceItem[]);
 const { supabase } = useSupabase();
-const { data, error } = await supabase.from('services').select();
 
-servicesList.value = data as IServiceItem[];
+try {
+  const { data, error } = await supabase.from('services').select();
+
+  servicesList.value = data as IServiceItem[];
+} catch (error) {
+  error.value = true;
+  servicesList.value = [];
+}
 </script>
 
 <template>

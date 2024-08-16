@@ -5,10 +5,16 @@ export declare type IProjects = {
 };
 
 const { supabase } = useSupabase();
-const { data, error } = await supabase.from('projects').select();
 const projects = ref([] as IProjects[]);
 
-projects.value = data as IProjects[];
+try {
+  const { data, error } = await supabase.from('projects').select();
+
+  projects.value = data as IProjects[];
+} catch (error) {
+  error.value = true;
+  projects.value = [];
+}
 </script>
 
 <template>

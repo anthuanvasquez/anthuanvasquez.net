@@ -15,31 +15,40 @@ export declare type ISkillGroup = {
   [key: string]: ISkillItemGroup;
 };
 
-const { supabase } = useSupabase();
-const { data, error } = await supabase.from('skills').select();
 const skills = ref([] as ISkillItem[]);
 const groupSkillsByCategory = ref({} as ISkillGroup);
+const { supabase } = useSupabase();
 
-skills.value = data as ISkillItem[];
-groupSkillsByCategory.value = skills.value.reduce(
-  (acc: ISkillGroup, skill: ISkillItem) => {
-    if (!acc[skill.category]) {
-      acc[skill.category] = {
-        skills: [],
-        avgLevel: 0,
-      };
-    }
+try {
+  const { data, error } = await supabase.from('skills').select();
 
-    acc[skill.category].skills.push(skill);
-    acc[skill.category].avgLevel =
-      (acc[skill.category].avgLevel * (acc[skill.category].skills.length - 1) +
-        skill.level) /
-      acc[skill.category].skills.length;
+  skills.value = data as ISkillItem[];
 
-    return acc;
-  },
-  {}
-) as ISkillGroup;
+  groupSkillsByCategory.value = skills.value.reduce(
+    (acc: ISkillGroup, skill: ISkillItem) => {
+      if (!acc[skill.category]) {
+        acc[skill.category] = {
+          skills: [],
+          avgLevel: 0,
+        };
+      }
+
+      acc[skill.category].skills.push(skill);
+      acc[skill.category].avgLevel =
+        (acc[skill.category].avgLevel *
+          (acc[skill.category].skills.length - 1) +
+          skill.level) /
+        acc[skill.category].skills.length;
+
+      return acc;
+    },
+    {}
+  ) as ISkillGroup;
+} catch (error) {
+  error.value = true;
+  skills.value = [];
+  groupSkillsByCategory.value = {};
+}
 </script>
 
 <template>

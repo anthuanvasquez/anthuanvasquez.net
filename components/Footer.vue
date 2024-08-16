@@ -1,14 +1,10 @@
-<script setup lang="ts">
-import FooterSignUpForm from '@/components/FooterSignUpForm.vue';
-</script>
-
 <template>
   <footer id="footer" class="footer py-8">
     <div class="container mx-auto">
-      <div class="grid grid-cols-3 gap-8">
-        <div class="column">
-          <div class="box first">
-            <h3 class="title is-5">Thank you for visiting my page.</h3>
+      <div class="grid grid-cols-12 gap-8">
+        <div class="col-span-4">
+          <div class="space-y-4">
+            <h3 class="text-2xl font-bold">Thank you for visiting my page.</h3>
             <p>
               When I'm not writing code you can find me trying to learn new
               things, playing video games, trying new restaurants, trying out
@@ -16,9 +12,9 @@ import FooterSignUpForm from '@/components/FooterSignUpForm.vue';
             </p>
           </div>
         </div>
-        <div class="column">
-          <div class="box middle">
-            <h3 class="title is-5">
+        <div class="col-span-4">
+          <div class="space-y-4">
+            <h3 class="text-2xl font-bold">
               People are the essence of the tech industry.
             </h3>
             <p>
@@ -28,9 +24,9 @@ import FooterSignUpForm from '@/components/FooterSignUpForm.vue';
             </p>
           </div>
         </div>
-        <div class="column">
-          <div class="box last">
-            <h3 class="title is-5">Get in touch.</h3>
+        <div class="col-span-4">
+          <div class="space-y-4">
+            <h3 class="text-2xl font-bold">Get in touch.</h3>
             <p>
               If you have any questions feel free to reach out at
               <a href="mailto:me@anthuanvasquez.net"
@@ -42,9 +38,9 @@ import FooterSignUpForm from '@/components/FooterSignUpForm.vue';
       </div>
     </div>
 
-    <div id="copyrights" class="copyrights mt-8">
+    <div id="copyrights" class="mt-8">
       <div class="container mx-auto text-center">
-        <p>
+        <p class="text-sm">
           Copyrights 2019. <span>Designed</span>, <span>Created</span> and
           <span>Develop</span> by
           <strong><a href="https://und3fined.dev">und3fined.dev</a></strong

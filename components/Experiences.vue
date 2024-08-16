@@ -10,11 +10,17 @@ export declare type IExperience = {
   country?: IconName;
 };
 
-const { supabase } = useSupabase();
-const { data, error } = await supabase.from('experiences').select();
 const experiences = ref([] as IExperience[]);
+const { supabase } = useSupabase();
 
-experiences.value = data as IExperience[];
+try {
+  const { data, error } = await supabase.from('experiences').select();
+
+  experiences.value = data as IExperience[];
+} catch (error) {
+  error.value = true;
+  experiences.value = [];
+}
 </script>
 
 <template>
