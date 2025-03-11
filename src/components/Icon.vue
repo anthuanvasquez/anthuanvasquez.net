@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ExclamationCircleIcon, ArrowPathIcon } from '@heroicons/vue/24/solid';
-import type { IconName, HeroIconName, IconType } from '@/types';
+import type { IconName, HeroIconName, IconType } from '~/src/types';
 
 interface Props {
   name: IconName;

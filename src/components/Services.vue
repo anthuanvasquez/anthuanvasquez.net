@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IconName } from '@/types';
+import type { IconName } from '~/src/types';
 
 export declare type IServiceItem = {
   title: string;
