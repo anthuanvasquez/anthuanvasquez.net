@@ -1,56 +1,65 @@
 <script setup lang="ts">
-import type { IconName } from '~/src/types';
+import type { IconName, Experience } from '~/types';
 
-export declare type IExperience = {
-  name: string;
-  description: string;
-  position: string;
-  date: string;
-  devTime: string;
-  country?: IconName;
-};
-
-const experiences = ref([] as IExperience[]);
-const { supabase } = useSupabase();
-
-try {
-  const { data, error } = await supabase.from('experiences').select();
-
-  experiences.value = data as IExperience[];
-} catch (error) {
-  error.value = true;
-  experiences.value = [];
-}
+const {
+  data: experiences,
+  error,
+  pending,
+} = await useGetFetch<Experience[]>('api/experiences');
 </script>
 
 <template>
   <div class="container mx-auto">
-    <div v-if="!error" class="grid grid-cols-12 gap-8">
+    <div v-if="experiences" class="flex flex-wrap gap-4">
       <div
         v-for="(experience, index) in experiences"
         :key="index"
-        class="col-span-4"
+        class="relative w-full cursor-pointer"
       >
+        <Icon :name="'ArrowUpRightIcon'" class="inline-block h-4 w-4 absolute top-2/4 right-4 -translate-y-2/4" />
+
         <div
-          class="border border-slate-800 p-4 h-full rounded-lg relative flex flex-col"
+          class="grid grid-cols-12 gap-4 rounded-lg border border-slate-800 p-4 hover:bg-slate-100"
         >
-          <h2 class="text-2xl font-bold">
-            {{ experience.name }}
-          </h2>
-          <p class="text-sm italic">
-            {{ experience.position }}
-          </p>
-          <p class="text-md my-3">
-            {{ experience.description }}
-          </p>
-          <p
-            class="text-lg font-bold text-tertiary flex justify-between w-full mt-auto"
+          <div class="col-span-3 flex flex-col justify-start">
+            <div class="text-lg">
+              {{ experience.date }}
+            </div>
+            <div class="font-firacode text-sm text-slate-500">
+              {{ experience.coding }}
+            </div>
+          </div>
+
+          <div
+            class="col-span-3 flex items-center justify-start text-2xl font-light uppercase"
           >
-            <span>{{ experience.date }}</span>
-            <span>{{ experience.devTime }}</span>
-          </p>
-          <div v-if="experience?.country" class="absolute top-5 right-5">
-            <Icon :name="experience.country" type="custom" class="h-8 w-8" />
+            {{ experience.name }}
+          </div>
+
+          <div class="col-span-6 flex items-center justify-start font-light">
+            <span class="text-2xl">{{ experience.position }}</span> |
+            <span class="font-firacode text-xl">{{
+              experience.description
+            }}</span>
+          </div>
+
+          <div v-if="experience?.projects" class="col-span-12 mt-4 hidden">
+            <ul class="space-y-2">
+              <li
+                v-for="project in experience.projects"
+                :key="project.name"
+                class="rounded-lg border p-3"
+              >
+                <h4 class="font-firacode text-lg font-medium">
+                  {{ project.name }}
+                </h4>
+                <p class="text-sm font-light">{{ project.description }}</p>
+                <p class="text-sm font-light">
+                  <span class="font-bold">SKILLS:</span>
+                  <span class="text-primary">{{ project.skills }}</span>
+                </p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
