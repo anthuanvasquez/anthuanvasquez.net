@@ -1,12 +1,23 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   srcDir: 'src/',
+  components: ['~/components'],
+  css: ['~/assets/main.css'],
   modules: [
     '@nuxtjs/i18n',
     '@nuxtjs/eslint-module',
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
+    '@nuxt/test-utils/module',
   ],
+  typescript: {
+    typeCheck: true,
+    tsConfig: {
+      compilerOptions: {
+        types: ['node'],
+      },
+    },
+  },
   devtools: {
     enabled: true,
   },
@@ -15,7 +26,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Anthuan Vásquez | Software Engineer',
+      title: 'Anthuan Vásquez | Senior Software Engineer',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -24,7 +35,6 @@ export default defineNuxtConfig({
           content: 'Software Engineer, JavaScript Engineer, Web Engineer',
         },
         {
-          hid: 'description',
           name: 'description',
           content: 'Software Engineer',
         },
@@ -32,17 +42,11 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/*', href: '/favicon.ico' }],
     },
   },
-  css: ['~/assets/main.css'],
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
-  },
-  image: {
-    inject: true,
-    quality: 80,
-    format: ['webp'],
   },
   i18n: {
     locales: [
@@ -69,10 +73,12 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     vueI18n: './i18n.config.ts',
   },
+  routeRules: {
+    '/': { prerender: true },
+    '/api/*': {},
+  },
   runtimeConfig: {
     public: {
-      SUPABASE_URL: process.env.SUPABASE_URL,
-      SUPABASE_KEY: process.env.SUPABASE_KEY,
       BASE_URL: process.env.BASE_URL,
     },
   },
