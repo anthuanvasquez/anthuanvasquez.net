@@ -1,31 +1,18 @@
 <script setup lang="ts">
-import type { IconName } from '~/src/types';
+import type { IconName, Service } from '~/types';
 
-export declare type IServiceItem = {
-  title: string;
-  description: string;
-  icon: IconName;
-  current?: boolean;
-};
-
-const servicesList = ref([] as IServiceItem[]);
-const { supabase } = useSupabase();
-
-try {
-  const { data, error } = await supabase.from('services').select();
-
-  servicesList.value = data as IServiceItem[];
-} catch (error) {
-  error.value = true;
-  servicesList.value = [];
-}
+const {
+  data: services,
+  error,
+  pending,
+} = await useGetFetch<Service[]>('api/services');
 </script>
 
 <template>
   <div class="container mx-auto px-4">
-    <div v-if="!error" class="grid grid-cols-6 sm:grid-cols-12 gap-8">
+    <div v-if="services" class="grid grid-cols-6 sm:grid-cols-12 gap-8">
       <div
-        v-for="(service, index) in servicesList"
+        v-for="(service, index) in services"
         :key="index"
         class="col-span-6 lg:col-span-4 gradient-bg rounded-lg p-0.5"
       >
@@ -36,14 +23,11 @@ try {
             v-if="service?.icon"
             :name="service.icon"
             type="outline"
-            class="text-white h-12 w-12"
+            class="block text-white h-12 w-12 m-auto"
           />
 
-          <p class="text-2xl font-bold my-3 leading-tight">
-            {{ service.title }}
-          </p>
-          <p class="text-lg">
-            {{ service.description }}
+          <p class="text-2xl font-medium font-firacode my-3 leading-tight text-center">
+            {{ service.name }}
           </p>
         </div>
       </div>
