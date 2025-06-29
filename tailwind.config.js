@@ -1,4 +1,4 @@
-const srcDir = '.';
+const srcDir = './src';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -13,11 +13,15 @@ module.exports = {
     `${srcDir}/app.{js,ts,vue}`,
     `${srcDir}/Error.{js,ts,vue}`,
     `${srcDir}/error.{js,ts,vue}`,
-    `${srcDir}/app.config.{js,ts}`,
     `${srcDir}/content/**/*.md`,
+    `./nuxt.config.{js,ts}`,
   ],
   theme: {
     extend: {
+      fontFamily: {
+        firacode: ['Fira Code', 'monospace'],
+        opensans: ['Open Sans', 'sans-serif'],
+      },
       colors: {
         primary: '#4C47FE',
         secondary: '#27BCFD',
@@ -26,5 +30,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
