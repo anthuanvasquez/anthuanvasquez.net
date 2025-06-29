@@ -1,15 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  srcDir: 'src/',
-  components: ['~/components'],
-  css: ['~/assets/main.css'],
   modules: [
-    '@nuxt/eslint',
+    '@nuxt/ui',
     '@nuxt/image',
+    '@nuxt/eslint',
     '@nuxt/test-utils/module',
     '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
   ],
+  srcDir: 'src/',
+  components: ['~/components'],
+  css: ['~/assets/main.css'],
+  ui: {
+    prefix: 'Nuxt',
+  },
   typescript: {
     typeCheck: true,
     tsConfig: {
@@ -17,11 +21,6 @@ export default defineNuxtConfig({
         types: ['node'],
       },
     },
-  },
-  eslint: {
-    checker: {
-      configType: 'eslintrc'
-    }
   },
   devtools: {
     enabled: true,

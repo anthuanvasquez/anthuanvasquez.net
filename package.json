@@ -21,7 +21,9 @@
     "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.2.0",
     "@nuxt/image": "1.10.0",
+    "@nuxt/ui": "^3.2.0",
     "nuxt": "^3.17.5",
+    "tailwind-merge": "^3.3.1",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
   },
