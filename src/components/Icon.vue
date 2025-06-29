@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ExclamationCircleIcon, ArrowPathIcon } from '@heroicons/vue/24/solid';
-import type { IconName, HeroIconName, IconType } from '~/src/types';
+import type { IconName, HeroIconName, IconType } from '~/types';
 
 interface Props {
   name: IconName;
@@ -11,7 +11,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   name: 'ExclamationCircleIcon',
   type: 'solid',
-  class: 'h-4 w-4',
+  class: 'inline-block h-4 w-4',
 });
 
 const IconAsyncComponent = defineAsyncComponent({
@@ -51,7 +51,7 @@ const IconAsyncComponent = defineAsyncComponent({
 </script>
 
 <template>
-  <i :class="`inline-block ${props.class}`">
+  <i :class="`${props.class}`">
     <IconAsyncComponent />
   </i>
 </template>

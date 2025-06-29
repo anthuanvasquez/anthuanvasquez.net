@@ -10,23 +10,25 @@ const {
 
 <template>
   <div class="container mx-auto px-4">
-    <div v-if="services" class="grid grid-cols-6 sm:grid-cols-12 gap-8">
+    <div v-if="services" class="grid grid-cols-6 gap-8 sm:grid-cols-12">
       <div
         v-for="(service, index) in services"
         :key="index"
-        class="col-span-6 lg:col-span-4 gradient-bg rounded-lg p-0.5"
+        class="gradient-bg col-span-6 rounded-lg p-0.5 lg:col-span-4"
       >
         <div
-          class="rounded-lg p-6 h-full bg-gradient-to-b from-slate-900 to-black"
+          class="h-full rounded-lg bg-gradient-to-b from-slate-900 to-black p-6"
         >
           <Icon
             v-if="service?.icon"
             :name="service.icon"
             type="outline"
-            class="block text-white h-12 w-12 m-auto"
+            class="m-auto block size-12 text-white"
           />
 
-          <p class="text-2xl font-medium font-firacode my-3 leading-tight text-center">
+          <p
+            class="my-3 text-center font-firacode text-2xl font-medium leading-tight"
+          >
             {{ service.name }}
           </p>
         </div>

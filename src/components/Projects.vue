@@ -18,7 +18,7 @@ const {
           <h2 class="font-firacode text-2xl font-medium">
             {{ project.name }}
           </h2>
-          <p class="text-md my-3 font-light">
+          <p class="my-3 font-light">
             {{ project.description }}
           </p>
         </div>
