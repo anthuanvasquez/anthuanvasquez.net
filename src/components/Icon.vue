@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ExclamationCircleIcon, ArrowPathIcon } from '@heroicons/vue/24/solid';
+import { twMerge } from 'tailwind-merge';
 import type { IconName, HeroIconName, IconType } from '~/types';
 
 interface Props {
@@ -11,18 +12,21 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   name: 'ExclamationCircleIcon',
   type: 'solid',
-  class: 'inline-block h-4 w-4',
+  class: '',
+});
+
+const iconClass = computed(() => {
+  return twMerge('inline-block h-4 w-4', props.class);
 });
 
 const IconAsyncComponent = defineAsyncComponent({
+  loadingComponent: ArrowPathIcon,
+  errorComponent: ExclamationCircleIcon,
+  delay: 200,
+  timeout: 4000,
   loader: async () => {
     try {
       let iconComponent: Component | undefined;
-
-      if (props.type === 'custom') {
-        const icon = await import(`./ui/Icon/Custom/src/${props.name}.vue`);
-        iconComponent = icon as Component;
-      }
 
       if (props.type === 'outline') {
         const module = await import('@heroicons/vue/24/outline');
@@ -39,19 +43,13 @@ const IconAsyncComponent = defineAsyncComponent({
       }
 
       return iconComponent;
-    } catch (error) {
+    } catch (error: any) {
       throw new Error('Failed to load component.');
     }
   },
-  loadingComponent: ArrowPathIcon,
-  errorComponent: ExclamationCircleIcon,
-  delay: 200,
-  timeout: 4000,
 });
 </script>
 
 <template>
-  <i :class="`${props.class}`">
-    <IconAsyncComponent />
-  </i>
+  <IconAsyncComponent :class="iconClass" />
 </template>

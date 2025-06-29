@@ -21,6 +21,9 @@ const {
           <p class="my-3 font-light">
             {{ project.description }}
           </p>
+          <p class="my-3 font-light text-slate-500">
+            {{ project.skills }}
+          </p>
         </div>
       </div>
     </div>

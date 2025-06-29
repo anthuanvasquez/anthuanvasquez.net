@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import type { IconName, Experience } from '~/types';
+import type { Experience } from '~/types';
 
 const {
   data: experiences,
   error,
   pending,
 } = await useGetFetch<Experience[]>('api/experiences');
+
+const expandedExperience = ref<number | null>(null);
+const toggleExperience = (index: number) => {
+  expandedExperience.value = expandedExperience.value === index ? null : index;
+};
 </script>
 
 <template>
@@ -15,11 +20,17 @@ const {
         v-for="(experience, index) in experiences"
         :key="index"
         class="relative w-full cursor-pointer"
+        @click="toggleExperience(index)"
       >
-        <Icon :name="'ArrowUpRightIcon'" class="inline-block h-4 w-4 absolute top-2/4 right-4 -translate-y-2/4" />
+        <div
+          class="absolute right-4 top-2/4 inline-block -translate-y-2/4 transition-transform"
+          :class="{ hidden: expandedExperience === index }"
+        >
+          <Icon :name="'ArrowUpRightIcon'" class="size-4" />
+        </div>
 
         <div
-          class="grid grid-cols-12 gap-4 rounded-lg border border-slate-800 p-4 hover:bg-slate-100"
+          class="grid grid-cols-12 gap-4 rounded-lg border border-slate-800 bg-gradient-to-b from-slate-900 to-black p-4"
         >
           <div class="col-span-3 flex flex-col justify-start">
             <div class="text-lg">
@@ -36,31 +47,21 @@ const {
             {{ experience.name }}
           </div>
 
-          <div class="col-span-6 flex items-center justify-start font-light">
-            <span class="text-2xl">{{ experience.position }}</span> |
-            <span class="font-firacode text-xl">{{
-              experience.description
-            }}</span>
+          <div
+            class="col-span-6 flex items-center justify-start space-x-2 text-xl font-light"
+          >
+            <span class="">{{ experience.position }}</span>
+            <span class="text-slate-500">|</span>
+            <span class="font-firacode">
+              {{ experience.description }}
+            </span>
           </div>
 
-          <div v-if="experience?.projects" class="col-span-12 mt-4 hidden">
-            <ul class="space-y-2">
-              <li
-                v-for="project in experience.projects"
-                :key="project.name"
-                class="rounded-lg border p-3"
-              >
-                <h4 class="font-firacode text-lg font-medium">
-                  {{ project.name }}
-                </h4>
-                <p class="text-sm font-light">{{ project.description }}</p>
-                <p class="text-sm font-light">
-                  <span class="font-bold">SKILLS:</span>
-                  <span class="text-primary">{{ project.skills }}</span>
-                </p>
-              </li>
-            </ul>
-          </div>
+          <ExperienceProject
+            v-if="experience?.projects"
+            :projects="experience.projects"
+            :is-expanded="expandedExperience === index"
+          />
         </div>
       </div>
     </div>

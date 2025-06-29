@@ -12,7 +12,9 @@ const {
   <div class="container mx-auto px-4">
     <div class="md:grid md:grid-cols-2">
       <div>
-        <h2 class="mb-4 text-center text-2xl font-bold">Proficient</h2>
+        <h2 class="mb-4 text-center font-firacode text-2xl font-bold">
+          Proficient
+        </h2>
 
         <div
           v-if="skills"
@@ -23,16 +25,18 @@ const {
               (skill) => skill.category === 'Proficient'
             )"
             :key="index"
-            class="inline-flex rounded-lg border border-slate-800 bg-gradient-to-b from-slate-900 to-black p-2"
+            class="inline-flex rounded-lg border border-slate-800 bg-gradient-to-b from-slate-900 to-black p-2 text-slate-500 hover:text-white"
           >
-            <div class="text-center text-sm font-light text-slate-500">
+            <div class="text-center text-sm font-light">
               {{ skill.name }}
             </div>
           </div>
         </div>
       </div>
       <div>
-        <h2 class="my-4 text-center text-2xl font-bold">Experienced</h2>
+        <h2 class="my-4 text-center font-firacode text-2xl font-bold">
+          Experienced
+        </h2>
 
         <div v-if="skills" class="flex flex-wrap justify-center gap-2">
           <div
@@ -40,9 +44,9 @@ const {
               (skill) => skill.category === 'Experienced'
             )"
             :key="index"
-            class="rounded-lg border border-slate-800 bg-gradient-to-b from-slate-900 to-black p-2"
+            class="rounded-lg border border-slate-800 bg-gradient-to-b from-slate-900 to-black p-2 text-slate-500 hover:text-white"
           >
-            <div class="text-center text-sm font-light text-slate-500">
+            <div class="text-center text-sm font-light">
               {{ skill.name }}
             </div>
           </div>

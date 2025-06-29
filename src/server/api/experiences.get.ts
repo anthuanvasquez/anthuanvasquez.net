@@ -8,14 +8,13 @@ export default defineEventHandler(async (event): Promise<Experience[]> => {
       description: 'JavaScript & Angular',
       date: '2024 - Present',
       coding: '3000hrs+',
-      country: 'DOFlagIcon',
       projects: [
         {
           name: 'CORE System UI/UX',
           description:
             'CORE System is a web application that allows users to manage their projects and tasks.',
           skills:
-            'Angular, TypeScript, Node.js, TailwindCSS, GitLab, UX, Accessibility, CI/CD, GitLab, UX, Accessibility, CI/CD',
+            'Angular, TypeScript, Node.js, TailwindCSS, GitLab, UX, Accessibility, CI/CD',
         },
         {
           name: 'POC Keycloak Authentication',
@@ -37,7 +36,6 @@ export default defineEventHandler(async (event): Promise<Experience[]> => {
       description: 'JavaScript & Node.js',
       date: '2020 - 2024',
       coding: '3000hrs+',
-      country: 'DOFlagIcon',
       projects: [
         {
           name: 'Company Website',
@@ -65,7 +63,6 @@ export default defineEventHandler(async (event): Promise<Experience[]> => {
       description: 'JavaScript, Laravel & Vue',
       date: '2019 - 2020',
       coding: '800hrs+',
-      country: 'ARFlagIcon',
       projects: [
         {
           name: 'Drop Shipping Store UI/UX',
@@ -82,7 +79,6 @@ export default defineEventHandler(async (event): Promise<Experience[]> => {
       description: 'JavaScript, PHP & Magento CE',
       date: '2016 - 2019',
       coding: '2800hrs+',
-      country: 'PLFlagIcon',
       projects: [
         {
           name: 'Zeragownia',
