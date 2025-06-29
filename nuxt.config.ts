@@ -4,11 +4,11 @@ export default defineNuxtConfig({
   components: ['~/components'],
   css: ['~/assets/main.css'],
   modules: [
-    '@nuxtjs/i18n',
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/tailwindcss',
+    '@nuxt/eslint',
     '@nuxt/image',
     '@nuxt/test-utils/module',
+    '@nuxtjs/i18n',
+    '@nuxtjs/tailwindcss',
   ],
   typescript: {
     typeCheck: true,
@@ -17,6 +17,11 @@ export default defineNuxtConfig({
         types: ['node'],
       },
     },
+  },
+  eslint: {
+    checker: {
+      configType: 'eslintrc'
+    }
   },
   devtools: {
     enabled: true,

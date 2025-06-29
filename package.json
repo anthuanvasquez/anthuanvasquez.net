@@ -26,8 +26,9 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@nuxt/test-utils": "^3.19.1",
+    "@nuxt/eslint": "^1.4.1",
     "@nuxt/eslint-config": "^1.4.1",
+    "@nuxt/test-utils": "^3.19.1",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/i18n": "^9.5.6",
@@ -40,13 +41,14 @@
     "@vitest/ui": "^3.2.4",
     "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.21",
-    "eslint": "^8.56.1",
+    "eslint": "^9.30.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-tailwindcss": "^3.18.0",
     "eslint-plugin-vitest": "^0.5.4",
     "eslint-plugin-vue": "^10.2.0",
+    "globals": "^16.2.0",
     "happy-dom": "^18.0.1",
     "jsdom": "^26.1.0",
     "postcss": "^8.5.6",
@@ -56,7 +58,9 @@
     "sass": "^1.89.2",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5",
+    "vite-plugin-eslint2": "^5.0.3",
     "vitest": "^3.2.4",
+    "vue-eslint-parser": "^10.1.4",
     "vue-tsc": "^2.2.10"
   },
   "packageManager": "pnpm@10.6.2+sha512.47870716bea1572b53df34ad8647b42962bc790ce2bf4562ba0f643237d7302a3d6a8ecef9e4bdfc01d23af1969aa90485d4cebb0b9638fa5ef1daef656f6c1b"
