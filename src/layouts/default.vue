@@ -13,6 +13,7 @@ const htmlAttrs = computed(() => head.value.htmlAttrs!);
         <NuxtPage />
       </main>
       <Footer />
+      <Chatbot />
     </Body>
   </Html>
 </template>

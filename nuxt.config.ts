@@ -70,6 +70,8 @@ export default defineNuxtConfig({
     vueI18n: './i18n.config.ts',
   },
   runtimeConfig: {
+    // Private keys (only available on server-side)
+    openaiApiKey: process.env.OPENAI_API_KEY,
     public: {
       SUPABASE_URL: process.env.SUPABASE_URL,
       SUPABASE_KEY: process.env.SUPABASE_KEY,

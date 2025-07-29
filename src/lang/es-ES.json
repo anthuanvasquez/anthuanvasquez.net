@@ -1,4 +1,11 @@
 {
   "welcome": "Bienvenido",
-  "hero-title": "Un Ingeniero de Software con Pasión por Construir Cosas"
+  "hero-title": "Un Ingeniero de Software con Pasión por Construir Cosas",
+  "chatbot": {
+    "welcome": "¡Hola! Soy el asistente virtual de Anthuan. ¿En qué puedo ayudarte hoy?",
+    "placeholder": "Escribe tu mensaje...",
+    "send": "Enviar",
+    "title": "Asistente Virtual",
+    "error": "Lo siento, hubo un error. Por favor intenta de nuevo."
+  }
 }
