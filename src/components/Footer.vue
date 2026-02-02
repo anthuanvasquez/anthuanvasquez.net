@@ -1,52 +1,17 @@
 <template>
-  <footer id="footer" class="footer py-8">
-    <div class="container mx-auto">
-      <div class="grid grid-cols-12 gap-8">
-        <div class="col-span-4">
-          <div class="space-y-4">
-            <h3 class="text-2xl font-bold">Thank you for visiting my page.</h3>
-            <p>
-              When I'm not writing code you can find me trying to learn new
-              things, playing video games, trying new restaurants, trying out
-              new tech, taking a coke or making music.
-            </p>
-          </div>
-        </div>
-        <div class="col-span-4">
-          <div class="space-y-4">
-            <h3 class="text-2xl font-bold">
-              People are the essence of the tech industry.
-            </h3>
-            <p>
-              Without people, we would have no clear purpose in our work. I
-              believe in helping people feel welcomed and included when it comes
-              to my work and who I am as a person.
-            </p>
-          </div>
-        </div>
-        <div class="col-span-4">
-          <div class="space-y-4">
-            <h3 class="text-2xl font-bold">Get in touch.</h3>
-            <p>
-              If you have any questions feel free to reach out at
-              <a href="mailto:me@anthuanvasquez.net"
-                ><i class="fas fa-envelope" /> me@anthuanvasquez.net</a
-              >. I'm excited for our session and to meet you!.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <footer id="footer" class="border-t border-slate-800 py-8 text-center">
+    <h2 class="mb-4 uppercase">HAVE A NICE WORKS? LET’S TALK WITH ME</h2>
 
-    <div id="copyrights" class="mt-8">
-      <div class="container mx-auto text-center">
-        <p class="text-sm">
-          Copyrights 2019. <span>Designed</span>, <span>Created</span> and
-          <span>Develop</span> by
-          <strong><a href="https://und3fined.dev">und3fined.dev</a></strong
-          >.
-        </p>
-      </div>
-    </div>
+    <p class="font-firacode mb-6 text-4xl uppercase font-bold text-white">
+      <span class="text-slate-500">me</span>@anthuanvasquez.net
+    </p>
+
+    <p class="text-sm text-slate-500">
+      ©2025. <span class="font-bold">Designed</span>,
+      <span class="font-bold">Created</span> and
+      <span class="font-bold">Develop</span> by
+      <strong><a href="https://anthuanvasquez.net">Anthuan</a></strong
+      >.
+    </p>
   </footer>
 </template>

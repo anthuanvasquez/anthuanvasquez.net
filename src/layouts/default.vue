@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const head = useLocaleHead({
-  addSeoAttributes: true,
+  seo: true,
 });
 const htmlAttrs = computed(() => head.value.htmlAttrs!);
 </script>
@@ -8,11 +8,13 @@ const htmlAttrs = computed(() => head.value.htmlAttrs!);
 <template>
   <Html :lang="htmlAttrs.lang">
     <Body>
-      <Header />
-      <main>
-        <NuxtPage />
-      </main>
-      <Footer />
+      <div class="min-h-screen flex flex-col">
+        <Header />
+        <main class="flex-grow">
+          <NuxtPage />
+        </main>
+        <Footer />
+      </div>
     </Body>
   </Html>
 </template>
