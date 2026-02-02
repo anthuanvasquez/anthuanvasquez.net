@@ -90,6 +90,7 @@ export default defineNuxtConfig({
     '/api/*': {},
   },
   runtimeConfig: {
+    anthropicApiKey: process.env.ANTHROPIC_API_KEY,
     public: {
       BASE_URL: process.env.BASE_URL,
       mapboxToken: process.env.MAPBOX_TOKEN,
