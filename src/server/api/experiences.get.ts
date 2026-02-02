@@ -6,7 +6,7 @@ export default defineEventHandler(async (event): Promise<Experience[]> => {
       name: 'CEVALDOM',
       position: 'Software Development Engineer',
       description: 'JavaScript & Angular',
-      date: '2024 - Present',
+      date: '2024 - NOW',
       coding: '3000hrs+',
       projects: [
         {
@@ -23,7 +23,7 @@ export default defineEventHandler(async (event): Promise<Experience[]> => {
           skills: 'Keycloak, Angular, TypeScript, Node.js, GitLab, CI/CD',
         },
         {
-          name: 'Website MVP',
+          name: 'CEVALDOM MVP Website',
           description:
             'CORE System is a web application that allows users to manage their projects and tasks.',
           skills: 'Astro, React, TypeScript, Node.js, Shadcn/UI',
@@ -38,7 +38,7 @@ export default defineEventHandler(async (event): Promise<Experience[]> => {
       coding: '3000hrs+',
       projects: [
         {
-          name: 'Company Website',
+          name: 'Minnek Digital Website',
           description: 'Ecommerce migration from Yahoo to Big Commerce.',
           skills:
             'JavaScript, jQuery, UX, SEO, Performance, Core Web Vitals, Node.js, GraphQL, Accessibility WCAG',
@@ -51,9 +51,9 @@ export default defineEventHandler(async (event): Promise<Experience[]> => {
         },
         {
           name: 'Spicy Lingerie',
-          description: 'Ecommerce migration from Yahoo to Big Commerce.',
+          description: 'Ecommerce migration from Yahoo to Big Commerce. Re-design UI/UX, Improve store performance with Core Web Vitals, Optimize for SEO, Accessibility WCAG.',
           skills:
-            'JavaScript, jQuery, UX, SEO, Performance, Core Web Vitals, Node.js, GraphQL, Accessibility WCAG',
+            'Big Commerce, Stencil CLI, JavaScript, jQuery, SASS, UX, SEO, Performance, Core Web Vitals, Node.js, GraphQL, Accessibility WCAG',
         },
       ],
     },
