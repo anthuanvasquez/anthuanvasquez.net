@@ -8,13 +8,12 @@ const htmlAttrs = computed(() => head.value.htmlAttrs!);
 <template>
   <Html :lang="htmlAttrs.lang">
     <Body>
-      <div class="min-h-screen flex flex-col">
-        <Header />
-        <main class="flex-grow">
-          <NuxtPage />
-        </main>
-        <Footer />
-      </div>
+      <Header />
+      <main>
+        <NuxtPage />
+      </main>
+      <Footer />
+      <Chatbot />
     </Body>
   </Html>
 </template>

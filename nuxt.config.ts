@@ -90,6 +90,7 @@ export default defineNuxtConfig({
     '/api/*': {},
   },
   runtimeConfig: {
+    openaiApiKey: process.env.OPENAI_API_KEY,
     anthropicApiKey: process.env.ANTHROPIC_API_KEY,
     public: {
       BASE_URL: process.env.BASE_URL,
