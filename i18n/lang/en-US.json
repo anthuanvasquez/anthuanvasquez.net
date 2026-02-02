@@ -1,4 +1,19 @@
 {
   "welcome": "Welcome",
-  "hero-title": "Full-Stack Engineer"
+  "hero-title": "Full-Stack Engineer",
+  "hero-description": "I'm Anthuan, a Full-Stack Engineer living in the Dominican Republic, and I focus on creating digital experiences that are easy to use, enjoyable, and serve their purpose.",
+  "section-knowledge": "Knowledge",
+  "section-knowledge-subtitle": "A Vast Of",
+  "section-experiences": "Experiences",
+  "section-experiences-subtitle": "Latest",
+  "section-projects": "Projects",
+  "section-projects-subtitle": "Built",
+  "section-services": "I Can Do",
+  "section-services-subtitle": "What",
+  "chat-title": "🤔 Do you want to know more about my experience?",
+  "chat-description": "💬 Chat with me and ask me about my projects, work experience, and interesting stories",
+  "chatbot.welcome": "👋 Welcome! 🤖 I'm Anthuan's AI Assistant. How can I help you?",
+  "chatbot.placeholder": "✍️ Type your message here...",
+  "chatbot.title": "Chat with Anthuan's AI 💡",
+  "chatbot.error": "⚠️ Something went wrong"
 }

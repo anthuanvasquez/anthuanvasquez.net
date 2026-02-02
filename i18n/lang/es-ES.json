@@ -11,5 +11,9 @@
   "section-services": "Puedo Hacer",
   "section-services-subtitle": "Qué",
   "chat-title": "¿Quieres conocer más sobre mi experiencia?",
-  "chat-description": "Chatea conmigo y pregúntame sobre mis proyectos, experiencia laboral e historias interesantes"
+  "chat-description": "Chatea conmigo y pregúntame sobre mis proyectos, experiencia laboral e historias interesantes",
+  "chatbot.welcome": "¡Bienvenido! Soy el Asistente de IA de Anthuan. ¿En qué puedo ayudarte?",
+  "chatbot.placeholder": "Escribe tu mensaje aquí...",
+  "chatbot.title": "Chatea con la IA de Anthuan",
+  "chatbot.error": "Algo salió mal"
 }
