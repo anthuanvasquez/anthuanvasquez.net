@@ -86,6 +86,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       BASE_URL: process.env.BASE_URL,
+      mapboxToken: process.env.MAPBOX_TOKEN,
     },
   },
 });
