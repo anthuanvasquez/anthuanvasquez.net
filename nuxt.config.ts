@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from '@tailwindcss/vite';
+
 export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
@@ -6,7 +8,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/test-utils/module',
     '@nuxtjs/i18n',
-    '@nuxtjs/tailwindcss',
+    'nuxt-mapbox',
   ],
   srcDir: 'src/',
   components: ['~/components'],
@@ -22,8 +24,14 @@ export default defineNuxtConfig({
       },
     },
   },
-  devtools: {
-    enabled: true,
+  eslint: {
+    checker: true,
+  },
+  mapbox: {
+    accessToken: process.env.MAPBOX_TOKEN,
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
   nitro: {
     compressPublicAssets: true,
@@ -44,12 +52,6 @@ export default defineNuxtConfig({
         },
       ],
       link: [{ rel: 'icon', type: 'image/*', href: '/favicon.ico' }],
-    },
-  },
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
     },
   },
   i18n: {
