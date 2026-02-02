@@ -1,14 +1,3 @@
-/**
- * If the outline icons are need it, just the line below.
- *
- */
-import type * as outline from '@heroicons/vue/24/outline';
-import type * as solid from '@heroicons/vue/24/solid';
-
-export type HeroIconName = keyof typeof solid | keyof typeof outline;
-export type IconType = 'solid' | 'outline' | 'custom';
-export type IconName = HeroIconName;
-
 export type Project = {
   name: string;
   description: string;
@@ -31,9 +20,43 @@ export type Experience = {
 export type Skill = {
   name: string;
   category: string;
+  icon?: string;
 };
 
 export type Service = {
   name: string;
-  icon: IconName;
+  icon: string;
 };
+// types/chat.ts
+export interface ChatMessage {
+  id: string;
+  role: 'user' | 'assistant' | 'system';
+  content: string;
+  timestamp: Date;
+}
+
+export interface ChatResponse {
+  message: string;
+  sessionId?: string;
+  error?: string;
+}
+
+export interface ChatRequest {
+  message: string;
+  history: ChatMessage[];
+  sessionId?: string;
+}
+
+export interface PersonalInfo {
+  name: string;
+  title: string;
+  experience: string[];
+  skills: string[];
+  projects: string[];
+  stories: string[];
+  contact: {
+    email?: string;
+    linkedin?: string;
+    github?: string;
+  };
+}

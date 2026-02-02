@@ -19,7 +19,7 @@ provide('data', {
 </script>
 
 <template>
-  <section class="py-12">
+  <section class="py-20">
     <Heading />
     <slot />
   </section>

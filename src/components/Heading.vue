@@ -3,13 +3,13 @@ const data: any = inject('data');
 </script>
 
 <template>
-  <div class="mb-12">
-    <p class="text-center text-2xl font-light">
+  <div class="mb-6 text-center">
+    <p class="text-2xl font-light">
       {{ data.subtitle }}
     </p>
 
     <h2
-      class="mb-3 text-center font-firacode text-5xl font-bold tracking-tight text-white"
+      class="mb-3 font-firacode text-5xl font-bold tracking-tight text-white"
     >
       {{ data.title }}
     </h2>

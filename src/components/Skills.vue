@@ -9,47 +9,25 @@ const {
 </script>
 
 <template>
-  <div class="container mx-auto px-4">
-    <div class="md:grid md:grid-cols-2">
-      <div>
-        <h2 class="mb-4 text-center font-firacode text-2xl font-bold">
-          Proficient
-        </h2>
+  <div class="container mx-auto">
+    <p class="mx-auto mb-12 max-w-lg text-center font-light text-slate-500">
+      Over the years, I gained the skills and knowledge to be a successful
+      software engineer whos continues to learn and grow.
+    </p>
 
-        <div
-          v-if="skills"
-          class="mx-auto flex max-w-4xl flex-wrap justify-center gap-2"
-        >
-          <div
-            v-for="(skill, index) in skills.filter(
-              (skill) => skill.category === 'Proficient'
-            )"
-            :key="index"
-            class="inline-flex rounded-lg border border-slate-800 bg-gradient-to-b from-slate-900 to-black p-2 text-slate-500 hover:text-white"
-          >
-            <div class="text-center text-sm font-light">
-              {{ skill.name }}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h2 class="my-4 text-center font-firacode text-2xl font-bold">
-          Experienced
-        </h2>
-
-        <div v-if="skills" class="flex flex-wrap justify-center gap-2">
-          <div
-            v-for="(skill, index) in skills.filter(
-              (skill) => skill.category === 'Experienced'
-            )"
-            :key="index"
-            class="rounded-lg border border-slate-800 bg-gradient-to-b from-slate-900 to-black p-2 text-slate-500 hover:text-white"
-          >
-            <div class="text-center text-sm font-light">
-              {{ skill.name }}
-            </div>
-          </div>
+    <div v-if="skills" class="flex flex-wrap justify-center gap-2">
+      <div
+        v-for="(skill, index) in skills"
+        :key="index"
+        class="hover:text-tertiary inline-flex rounded-lg border border-slate-800 bg-linear-to-b from-slate-900 to-black p-2 text-slate-500 transition-all hover:scale-105"
+      >
+        <div class="inline-flex items-center text-center text-sm font-light">
+          <UIcon
+            v-if="skill.icon"
+            :name="skill.icon"
+            class="me-2 inline-block h-5 w-5"
+          />
+          {{ skill.name }}
         </div>
       </div>
     </div>

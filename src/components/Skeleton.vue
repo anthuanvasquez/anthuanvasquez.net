@@ -7,7 +7,7 @@ defineProps({
 <template>
   <div
     role="status"
-    class="max-w-md animate-pulse space-y-4 divide-y divide-gray-200 rounded border border-gray-200 p-4 shadow md:p-6 dark:divide-gray-700 dark:border-gray-700"
+    class="max-w-md animate-pulse space-y-4 divide-y divide-gray-200 rounded border border-gray-200 p-4 shadow-sm md:p-6 dark:divide-gray-700 dark:border-gray-700"
   >
     <div v-for="n in count" :key="n" class="flex items-center justify-between">
       <div>

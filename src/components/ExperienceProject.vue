@@ -7,32 +7,24 @@ interface Project {
 
 interface Props {
   projects: Project[];
-  isExpanded: boolean;
 }
-
-const projectsContainer = ref<HTMLElement>();
 
 defineProps<Props>();
 </script>
 
 <template>
   <div
-    class="col-span-12 transition-all duration-300 ease-in-out"
-    ref="projectsContainer"
-    :class="{
-      'h-0 overflow-hidden': !isExpanded,
-      'mt-4 h-full': isExpanded,
-    }"
+    class="col-span-12 space-y-4 mt-6"
   >
-    <h2 class="font-firacode text-2xl mb-4">Projects</h2>
+    <h2 class="font-firacode text-xl">Showcase Projects</h2>
 
-    <ul v-if="isExpanded" class="grid grid-cols-3 gap-3">
+    <ul class="grid grid-cols-3 gap-3">
       <li
         v-for="project in projects"
         :key="project.name"
         class="rounded-lg gradient-bg p-0.5"
       >
-        <div class="space-y-2 rounded-lg bg-gradient-to-b from-slate-900 to-black p-3 h-full">
+        <div class="space-y-2 rounded-lg bg-linear-to-b from-slate-900 to-black p-3 h-full">
           <h4 class="font-firacode text-lg font-medium">
             {{ project.name }}
           </h4>

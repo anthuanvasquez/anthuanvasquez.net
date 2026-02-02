@@ -2,6 +2,9 @@
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineNuxtConfig({
+  devtools: {
+    enabled: false,
+  },
   modules: [
     '@nuxt/ui',
     '@nuxt/image',
@@ -11,10 +14,13 @@ export default defineNuxtConfig({
     'nuxt-mapbox',
   ],
   srcDir: 'src/',
-  components: ['~/components'],
   css: ['~/assets/main.css'],
+  components: ['~/components'],
+  // future: {
+  //   compatibilityVersion: 4,
+  // },
   ui: {
-    prefix: 'Nuxt',
+    prefix: 'U',
   },
   typescript: {
     typeCheck: true,
