@@ -5,7 +5,6 @@ import tsparser from '@typescript-eslint/parser'
 import prettier from 'eslint-plugin-prettier';
 import vue from 'eslint-plugin-vue'
 import tseslint from '@typescript-eslint/eslint-plugin'
-import tailwindcss from 'eslint-plugin-tailwindcss'
 import nuxt from 'eslint-plugin-nuxt';
 import vitest from 'eslint-plugin-vitest';
 
@@ -27,7 +26,7 @@ export default [
       parser: vueParser,
       parserOptions: {
         parser: tsparser,
-        ecmaVersion: 2021,
+        ecmaVersion: 2025,
         sourceType: 'module',
         extraFileExtensions: ['.vue']
       },
@@ -36,11 +35,15 @@ export default [
         ...globals.es2025,
       }
     },
+    settings: {
+      "better-tailwindcss": {
+        entryPoint: "src/assets/main.css",
+      }
+    },
     plugins: {
       '@typescript-eslint': tseslint,
       vue,
       nuxt,
-      tailwindcss,
       vitest,
       prettier,
     },
@@ -48,7 +51,6 @@ export default [
       ...tseslint.configs.recommended.rules,
       ...nuxt.configs.recommended.rules,
       ...vitest.configs.recommended.rules,
-      ...tailwindcss.configs.recommended.rules,
       'prettier/prettier': 'error',
       'no-console': 'warn',
       '@typescript-eslint/no-unused-vars': 'warn',
