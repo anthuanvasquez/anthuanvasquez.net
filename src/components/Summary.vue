@@ -14,16 +14,16 @@ onMounted(() => {
 <template>
   <div class="container mx-auto px-4">
     <div class="columns-3 gap-8">
-      <p class="text-lg mb-3">
+      <p class="mb-3 text-lg">
         Hi, I'm Anthuan Vásquez, a {{ age }} years old Developer.
       </p>
-      <p class="text-lg mb-3">
+      <p class="mb-3 text-lg">
         I'm a guy passionate for the technology, honest and a self-taught
         Front-End Developer. I consider myself as a person with initiative, who
         loves to take on new responsibilities, learning new things and face
         great challanges.
       </p>
-      <p class="text-lg mb-3">
+      <p class="mb-3 text-lg">
         With over {{ yearsOfExperience }} years of experience in the web
         industry. I am qualified in evaluating business requirements and
         outreach plans for current and future success. I'm a self-taught
@@ -32,11 +32,11 @@ onMounted(() => {
         version 2.9. I have worked in all versions since. In December 2014 I
         started my first steps in Magento version 1.9.
       </p>
-      <p class="text-lg mb-3">
+      <p class="mb-3 text-lg">
         I have worked with different brands, different needs and different
         roles, like to work with different aspects of the front-end.
       </p>
-      <p class="text-lg mb-3">
+      <p class="mb-3 text-lg">
         I specialize in the visual appearance of the websites or rather in their
         design, taking into account the technical requirements, functionality
         and user considerations, besides working with the back-end in the
@@ -47,18 +47,18 @@ onMounted(() => {
 
       <h3 class="text-2xl font-bold">I'm Currently.</h3>
 
-      <p class="text-lg mb-3">
+      <p class="mb-3 text-lg">
         Working as a Freelance Front End Web Developer.
       </p>
-      <p class="text-lg mb-3">
+      <p class="mb-3 text-lg">
         Collaborating on some
         <a href="https://github.com/anthuanvasquez">open-source</a> projects.
       </p>
-      <p class="text-lg mb-3">
+      <p class="mb-3 text-lg">
         Producing music as <a href="https://oidoperfecto.net">Oido Perfecto</a>.
       </p>
-      <p class="text-lg mb-3">Building my personal brand :).</p>
-      <p class="text-lg mb-3">
+      <p class="mb-3 text-lg">Building my personal brand :).</p>
+      <p class="mb-3 text-lg">
         Reading
         <a href="https://github.com/getify/You-Dont-Know-JS">You Don't JS</a>
         Series,
@@ -71,9 +71,9 @@ onMounted(() => {
         >
         books.
       </p>
-      <p class="text-lg mb-3">Fan of Dragon Ball Z, Super :)</p>
-      <p class="text-lg mb-3">Being a father.</p>
-      <p class="text-lg mb-3">Learning new things.</p>
+      <p class="mb-3 text-lg">Fan of Dragon Ball Z, Super :)</p>
+      <p class="mb-3 text-lg">Being a father.</p>
+      <p class="mb-3 text-lg">Learning new things.</p>
     </div>
   </div>
 </template>

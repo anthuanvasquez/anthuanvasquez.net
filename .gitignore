@@ -17,6 +17,9 @@ logs
 .DS_Store
 .fleet
 .idea
+.qodo
+.goose
+.eslintcache
 
 # Local env files
 .env

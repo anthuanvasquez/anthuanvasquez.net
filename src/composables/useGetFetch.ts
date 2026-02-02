@@ -1,7 +1,7 @@
-export const useGetFetch = async (path: string) => {
+export const useGetFetch = async <T>(path: string) => {
   const config = useRuntimeConfig();
 
-  const { data, pending, error } = await useFetch(path, {
+  const { data, pending, error } = await useFetch<T>(path, {
     baseURL: config.public.BASE_URL,
   });
 

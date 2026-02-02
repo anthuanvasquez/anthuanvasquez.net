@@ -10,19 +10,19 @@ const availableLocales = computed(() => {
 <template>
   <Menu as="div" class="text-right">
     <MenuButton
-      class="uppercase text-sm font-semibold text-white flex items-center py-2 px-4 rounded-full border"
+      class="flex items-center rounded-full border px-4 py-2 text-sm font-semibold uppercase text-white"
     >
-      <Icon :name="'GlobeAltIcon'" type="outline" class="h-4 w-4 mr-2" />
+      <UIcon name="i-lucide-globe" class="mr-2 size-4" />
       {{ locale }}
     </MenuButton>
     <MenuItems
-      class="absolute right-8 mt-2 w-[170px] origin-top-right divide-y divide-slate-400 border border-slate-400 rounded-md bg-black shadow-lg ring-1 ring-black/5 focus:outline-none"
+      class="absolute right-8 mt-2 w-[170px] origin-top-right divide-y divide-slate-400 rounded-md border border-slate-400 bg-black shadow-lg ring-1 ring-black/5 focus:outline-hidden"
     >
       <MenuItem
         v-for="localeObj in availableLocales"
         :key="localeObj.code"
         as="button"
-        class="text-white group flex w-full items-center px-2 py-2 text-sm hover:text-secondary"
+        class="group flex w-full items-center p-2 text-sm text-white hover:text-secondary"
         @click="setLocale(localeObj.code)"
       >
         <span class="mr-2">
@@ -32,10 +32,10 @@ const availableLocales = computed(() => {
           {{ localeObj.description }}
         </span>
         <span>
-          <Icon
+          <UIcon
             v-if="locale === localeObj.code"
-            :name="'CheckIcon'"
-            class="h-4 w-4 ms-2 text-white"
+            name="i-lucide-check"
+            class="ms-2 size-4 text-white"
           />
         </span>
       </MenuItem>
