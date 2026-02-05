@@ -1,75 +1,104 @@
-# Nuxt 3 Minimal Starter
+# Anthuan Vásquez | Senior Full-Stack Engineer
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Personal website of Anthuan Vásquez, a Senior Full-Stack Engineer. This project showcases a modern portfolio built with Nuxt 3, featuring internationalization, interactive maps, and an AI-powered chatbot.
+
+## Features
+
+- **⚡ Nuxt 3:** Built on the latest Vue 3 framework for high performance and developer experience.
+- **🎨 Tailwind CSS & Nuxt UI:** Modern, responsive, and accessible UI components.
+- **🌐 Internationalization (i18n):** Full support for English (en-US) and Spanish (es-ES).
+- **🗺️ Interactive Map:** Integrated with Mapbox for location visualization.
+- **🤖 AI Chatbot:** A conversational agent powered by Groq and LangChain to answer questions about Anthuan's experience.
+- **✅ Testing:** Unit and component testing with Vitest.
+- **🧹 Code Quality:** Enforced with ESLint and Prettier.
+
+## Tech Stack
+
+- **Framework:** [Nuxt 3](https://nuxt.com/)
+- **UI:** [Tailwind CSS](https://tailwindcss.com/) / [Nuxt UI](https://ui.nuxt.com/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **State Management:** Nuxt Composables
+- **Maps:** [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/api/) / [nuxt-mapbox](https://nuxt-mapbox.vercel.app/)
+- **AI/LLM:** [LangChain](https://js.langchain.com/) / [Groq](https://groq.com/)
+- **Testing:** [Vitest](https://vitest.dev/)
+
+## Prerequisites
+
+- **Node.js:** v18 or higher
+- **Package Manager:** [pnpm](https://pnpm.io/) (recommended)
 
 ## Setup
 
-Make sure to install the dependencies:
+1. **Clone the repository:**
+
+   ```bash
+   git clone <repository-url>
+   cd anthuanvasquez.net
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   pnpm install
+   ```
+
+3. **Configure Environment Variables:**
+
+   Copy the example environment file:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Update the `.env` file with your API keys:
+
+   ```env
+   BASE_URL=http://localhost:3000
+   MAPBOX_TOKEN=your_mapbox_token
+   GROQ_API_KEY=your_groq_api_key
+   ```
+
+## Development
+
+Start the development server:
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+pnpm dev
 ```
 
-## Development Server
+The application will be available at `http://localhost:3000`.
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
+## Building for Production
 
 Build the application for production:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+pnpm build
 ```
 
-Locally preview production build:
+Preview the production build locally:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+pnpm preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Testing & Linting
+
+Run unit tests:
+
+```bash
+pnpm test
+```
+
+Run linter:
+
+```bash
+pnpm lint
+```
+
+## Project Structure
+
+- `app/` - Application source code (pages, components, composables).
+- `server/` - Server-side API routes (including Chatbot logic).
+- `i18n/` - Internationalization configuration and translation files.
+- `public/` - Static assets.
