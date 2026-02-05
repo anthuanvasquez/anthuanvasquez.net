@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@nuxt/test-utils/module',
     '@nuxtjs/i18n',
     'nuxt-mapbox',
+    '@nuxt/content',
   ],
   css: ['~/assets/main.css'],
   components: ['~/components'],
